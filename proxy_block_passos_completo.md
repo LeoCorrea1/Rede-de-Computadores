@@ -183,6 +183,35 @@ sudo ip route add 200.10.0.0/24 via 192.168.0.20
 
 ---
 
+
+### 3.6 CONFIGURAR O SSH DO LINUX 
+
+-Instalar servidor SSH
+```bash
+sudo apt install openssh-server -y
+```
+
+-Verificar status do SSH
+```bash
+sudo systemctl status ssh
+
+
+```
+```bash
+sudo apt install openssh-server -y
+sudo systemctl enable --now ssh
+sudo ufw allow OpenSSH
+sudo ufw enable
+```
+
+-Teste do Windows ou Linux do grupo:
+```bash
+ssh usuario_grupo@200.10.0.41
+```
+
+
+
+
 ## 4️⃣ Entrega e Observações
 - Entrega: até 21/10
 - Disponibilidade para execução no laboratório 316: 08/10 e 15/10
