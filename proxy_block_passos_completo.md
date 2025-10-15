@@ -179,34 +179,18 @@ sudo adduser usuario_grupo
 sudo usermod -aG sudo usuario_grupo
 ```
 
-### 3.3 Instalar e configurar proxy transparente
-
-```bash
-sudo apt install squid -y
-```
-Configuração mínima para acesso total:
-```conf
-http_port 3128 transparent
-acl localnet src 0.0.0.0/0
-http_access allow localnet
-http_access deny all
-```
-```bash
-sudo systemctl restart squid
-```
-
-### 3.4 Configurar subinterface com IP WAN do grupo
+### 3.3 Configurar subinterface com IP WAN do grupo
 ```bash
 sudo ip addr add 192.168.0.20/30 dev enp0s31f6
 sudo ip link set enp0s31f6 up
 ```
 
-### 3.5 Rotear range de IP do grupo
+### 3.4 Rotear range de IP do grupo
 ```bash
 sudo ip route add 200.10.0.0/30 via 192.168.0.20
 ```
 
-### 3.6 Testar acesso entre grupos
+### 3.5 Testar acesso entre grupos
 - Todos os grupos devem conseguir acessar a página dos outros grupos usando proxy ou navegador apontando para a LAN correta.
 
 ---
