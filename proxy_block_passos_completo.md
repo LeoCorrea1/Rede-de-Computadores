@@ -101,7 +101,7 @@ http_port 3128
 acl blocked_sites dstdomain .bet365.bet.br
 http_access deny blocked_sites
 deny_info http://200.10.0.41/blocked.html blocked_sites
-acl localnet src 200.10.0.0/24
+acl localnet src 200.10.0.40/29
 http_access allow localnet
 http_access deny all
 ```
@@ -187,7 +187,7 @@ sudo ip link set enp0s31f6 up
 
 ### 3.4 Rotear range de IP do grupo
 ```bash
-sudo ip route add 200.10.0.0/30 via 192.168.0.20
+sudo ip route add 200.10.0.40/29 via 192.168.0.20
 ```
 
 ### 3.5 Testar acesso entre grupos
