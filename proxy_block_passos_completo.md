@@ -50,7 +50,7 @@ sudo usermod -aG sudo usuario_grupo
 ### 2.3 Configurar IP da LAN do grupo
 
 ```bash
-sudo ip addr add 200.10.0.41/24 dev enp0s31f6
+sudo ip addr add 200.10.0.41/29 dev enp0s31f6
 sudo ip link set enp0s31f6 up
 ```
 
@@ -62,7 +62,7 @@ network:
   ethernets:
     enp0s31f6:
       dhcp4: no
-      addresses: [200.10.0.41/24]
+      addresses: [200.10.0.41/29]
 ```
 ```bash
 sudo netplan apply
