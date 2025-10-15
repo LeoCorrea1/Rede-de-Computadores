@@ -197,13 +197,13 @@ sudo systemctl restart squid
 
 ### 3.4 Configurar subinterface com IP WAN do grupo
 ```bash
-sudo ip addr add 192.168.0.20/24 dev enp0s31f6
+sudo ip addr add 192.168.0.20/30 dev enp0s31f6
 sudo ip link set enp0s31f6 up
 ```
 
 ### 3.5 Rotear range de IP do grupo
 ```bash
-sudo ip route add 200.10.0.0/24 via 192.168.0.20
+sudo ip route add 200.10.0.0/30 via 192.168.0.20
 ```
 
 ### 3.6 Testar acesso entre grupos
